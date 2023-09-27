@@ -1,0 +1,15 @@
+---
+- name: Collect Default set of Facts
+  hosts: vsrx
+  gather_facts: no
+
+  tasks:
+    - name: Collect Default set of gather_facts
+      junos_facts:
+    - name: Collect Default Set of Facts and Configuration
+      junos_facts:
+        gather_subset: config
+    - name: Load Configuration File into device
+      junos_config:
+        src: srx.cfg
+        comment: update config
